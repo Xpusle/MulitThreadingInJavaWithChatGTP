@@ -7,7 +7,6 @@ public class Resources {
         this.name = name;
     }
 
-
 }
 
 class DeadLockExample implements Runnable {

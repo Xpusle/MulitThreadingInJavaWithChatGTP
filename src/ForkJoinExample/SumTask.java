@@ -15,7 +15,7 @@ public class SumTask extends RecursiveTask<Integer> {
     }
 
     @Override
-    protected Integer compute () {
+    protected Integer compute() {
         if (start - end <= THRSHOLD) {
             int sum = 0;
             for (int i = start; i < end; i++) {
@@ -32,20 +32,20 @@ public class SumTask extends RecursiveTask<Integer> {
             int rightside = Rightsideofthearray.compute();
             int leftside = leftsideofthearray.join();
 
-            return leftside+rightside;
+            return leftside + rightside;
         }
 
     }
 
 }
 
-class main{
+class main {
     public static void main(String[] args) {
-        int [] arr={1,2,3,4,5,6,7,8,9,10};
-        ForkJoinPool pool=new ForkJoinPool();
-        SumTask task=new SumTask(arr,0,arr.length);
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        ForkJoinPool pool = new ForkJoinPool();
+        SumTask task = new SumTask(arr, 0, arr.length);
 
-        int sum=pool.invoke(task);
-        System.out.println("Sum :"+sum);
+        int sum = pool.invoke(task);
+        System.out.println("Sum :" + sum);
     }
 }
